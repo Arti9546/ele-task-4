@@ -8,7 +8,7 @@ The objective was to configure and test basic firewall rules on a Linux system u
 
 ## ⚙️ Configuration Summary
 
-The task was executed on a Linux machine (e.g., Kali) using the principle of **Default Deny**—blocking all incoming traffic unless explicitly allowed.
+The task was executed on a Linux machine (e.g., Ubuntu) using the principle of **Default Deny**—blocking all incoming traffic unless explicitly allowed.
 
 ### 1. Default Policy Setup
 | Command | Purpose |
@@ -20,7 +20,7 @@ The task was executed on a Linux machine (e.g., Kali) using the principle of **D
 ### 2. Rule Configuration and Testing
 
 | Action Performed | Command | Observation / Test |
-| **Block Rule (Telnet)** | `sudo ufw deny 23/tcp` | Tested with `nc -z -v 127.0.0.1 23`. The connection **failed**, confirming the rule's effectiveness. |
+| **Block Rule (Telnet)** | `sudo ufw deny 23/tcp` | Tested with `nc -z -v 10.**.**.**`. The connection **failed**, confirming the rule's effectiveness. |
 | **Allow Rule (SSH)** | `sudo ufw allow ssh` | Explicitly **allowed** inbound traffic on port 22 for secure remote management. |
 | **Cleanup** | `sudo ufw delete [RULE NUMBER]` | Removed the temporary block rule after testing to maintain the final secure configuration (only SSH allowed). |
 
